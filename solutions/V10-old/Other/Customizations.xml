@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26103.175" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26103.00175">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="Cr0d265_shared_excelonlinebusiness_e2122ca2e054446e9dae1bae7e553f80">
+      <connectionreferencedisplayname>Cr0d265_shared_excelonlinebusiness_e2122ca2</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness</connectorid>
+      <description>Cr0d265_shared_excelonlinebusiness_e2122ca2e054446e9dae1bae7e553f80</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="Cr0d265_shared_office365_32afadf0d0b54be8b0578990f64d2522">
+      <connectionreferencedisplayname>Cr0d265_shared_office365_32afadf0</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <description>Cr0d265_shared_office365_32afadf0d0b54be8b0578990f64d2522</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="Cr0d265_shared_office365_6b6ebdd9a1ab48159aeac0b6e509c14e">
+      <connectionreferencedisplayname>Cr0d265_shared_office365_6b6ebdd9</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <description>Cr0d265_shared_office365_6b6ebdd9a1ab48159aeac0b6e509c14e</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="Cr0d265_shared_sharepointonline_75d621c03da0487ba41b401ff185f799">
+      <connectionreferencedisplayname>Cr0d265_shared_sharepointonline_75d621c0</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <description>Cr0d265_shared_sharepointonline_75d621c03da0487ba41b401ff185f799</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="Cr0d265_shared_sharepointonline_ba02c0bab6e64dcca3e9185b0d7457f3">
+      <connectionreferencedisplayname>Cr0d265_shared_sharepointonline_ba02c0ba</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <description>Cr0d265_shared_sharepointonline_ba02c0bab6e64dcca3e9185b0d7457f3</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

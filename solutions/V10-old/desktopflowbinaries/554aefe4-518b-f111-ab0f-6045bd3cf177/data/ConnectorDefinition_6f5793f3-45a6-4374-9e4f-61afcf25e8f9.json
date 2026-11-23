@@ -1,0 +1,262 @@
+{
+  "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+  "Definition": {
+    "Id": "/providers/Microsoft.PowerApps/apis/shared_office365",
+    "Name": "shared_office365",
+    "Properties": {
+      "IsCustomApi": false,
+      "Swagger": {
+        "basePath": "/apim/office365",
+        "definitions": {
+          "SharedMailboxClientSendHtmlMessage": {
+            "additionalProperties": null,
+            "example": null,
+            "properties": {
+              "MailboxAddress": {
+                "additionalProperties": null,
+                "x-ms-dynamic-list": {
+                  "builtInOperation": "AadGraph.GetUsers",
+                  "itemValuePath": "mail",
+                  "parameters": {}
+                },
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Specify email address of a shared mailbox like someone@contoso.com",
+                "format": "email",
+                "x-ms-summary": "Original Mailbox Address"
+              },
+              "To": {
+                "additionalProperties": null,
+                "x-ms-dynamic-list": {
+                  "builtInOperation": "AadGraph.GetUsers",
+                  "itemValuePath": "mail",
+                  "parameters": {}
+                },
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Specify email addresses separated by semicolons like someone@contoso.com",
+                "format": "email",
+                "x-ms-summary": "To"
+              },
+              "Subject": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Specify the subject of the mail",
+                "x-ms-summary": "Subject"
+              },
+              "Body": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Specify the body of the mail",
+                "format": "html",
+                "x-ms-summary": "Body"
+              },
+              "Cc": {
+                "additionalProperties": null,
+                "x-ms-dynamic-list": {
+                  "builtInOperation": "AadGraph.GetUsers",
+                  "itemValuePath": "mail",
+                  "parameters": {}
+                },
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Specify email addresses separated by semicolons like someone@contoso.com",
+                "format": "email",
+                "x-ms-summary": "CC",
+                "x-ms-visibility": "advanced"
+              },
+              "Bcc": {
+                "additionalProperties": null,
+                "x-ms-dynamic-list": {
+                  "builtInOperation": "AadGraph.GetUsers",
+                  "itemValuePath": "mail",
+                  "parameters": {}
+                },
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Specify email addresses separated by semicolons like someone@contoso.com",
+                "format": "email",
+                "x-ms-summary": "BCC",
+                "x-ms-visibility": "advanced"
+              },
+              "Attachments": {
+                "additionalProperties": null,
+                "example": null,
+                "items": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "$ref": "#/definitions/ClientSendAttachment",
+                  "default": null
+                },
+                "type": "array",
+                "default": null,
+                "description": "Attachments",
+                "x-ms-summary": "Attachments",
+                "x-ms-visibility": "advanced"
+              },
+              "Sensitivity": {
+                "additionalProperties": null,
+                "x-ms-dynamic-list": {
+                  "itemTitlePath": "DisplayName",
+                  "itemValuePath": "Id",
+                  "operationId": "GetSensitivityLabels",
+                  "parameters": {}
+                },
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Sensitivity",
+                "x-ms-summary": "Sensitivity",
+                "x-ms-visibility": "advanced"
+              },
+              "ReplyTo": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "The email addresses to use when replying",
+                "format": "email",
+                "x-ms-summary": "Reply To",
+                "x-ms-visibility": "advanced"
+              },
+              "Importance": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": "Normal",
+                "description": "Importance",
+                "enum": [
+                  "Low",
+                  "Normal",
+                  "High"
+                ],
+                "x-ms-summary": "Importance",
+                "x-ms-visibility": "advanced"
+              }
+            },
+            "required": [
+              "MailboxAddress",
+              "To",
+              "Subject",
+              "Body"
+            ],
+            "type": "object",
+            "default": null,
+            "description": "Shared Mailbox Send HTML Email Message"
+          },
+          "ClientSendAttachment": {
+            "additionalProperties": null,
+            "example": null,
+            "properties": {
+              "Name": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Attachment name",
+                "x-ms-summary": "Name",
+                "x-ms-name-for-model": "office365users_clientsendattachment_name",
+                "x-ms-description-for-model": "Set to the attachment file name the recipient will see when sending an attachment, including extension. Example: request-details.pdf."
+              },
+              "ContentBytes": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Attachment content",
+                "format": "byte",
+                "x-ms-summary": "Content",
+                "x-ms-name-for-model": "office365users_clientsendattachment_content_bytes",
+                "x-ms-description-for-model": "Set to the attachment file content as bytes, usually a base64 string from a previous action such as Get file content. Use only when sending an attachment."
+              }
+            },
+            "required": [
+              "Name",
+              "ContentBytes"
+            ],
+            "type": "object",
+            "default": null,
+            "description": "Attachment"
+          }
+        },
+        "host": "australia-001.azure-apim.net",
+        "info": {
+          "title": "Office 365 Outlook",
+          "version": "1.0"
+        },
+        "parameters": {},
+        "paths": {
+          "/{connectionId}/v2/SharedMailbox/Mail": {
+            "post": {
+              "consumes": [
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml",
+                "application/x-www-form-urlencoded"
+              ],
+              "deprecated": false,
+              "description": "This operation sends an email from a shared mailbox. Your account should have permission to access the mailbox for this operation to succeed.",
+              "externalDocs": {
+                "url": "https://docs.microsoft.com/connectors/office365/#send-an-email-from-a-shared-mailbox-(v2)"
+              },
+              "operationId": "SharedMailboxSendEmailV2",
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "connectionId",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "in": "body",
+                  "name": "emailMessage",
+                  "required": true,
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/SharedMailboxClientSendHtmlMessage",
+                    "default": null
+                  },
+                  "default": null,
+                  "description": "Email.",
+                  "x-ms-summary": "Email"
+                }
+              ],
+              "produces": [],
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "default": {
+                  "description": "Operation Failed."
+                }
+              },
+              "summary": "Send an email from a shared mailbox (V2)",
+              "x-ms-visibility": "important"
+            }
+          }
+        },
+        "responses": {},
+        "schemes": [
+          "https"
+        ],
+        "swagger": "2.0"
+      },
+      "Tier": 0
+    }
+  },
+  "DynamicSchemas": {},
+  "Locale": "en-US",
+  "saveId": "a3293344-3350-4169-bea7-96e9c1f50ec9"
+}

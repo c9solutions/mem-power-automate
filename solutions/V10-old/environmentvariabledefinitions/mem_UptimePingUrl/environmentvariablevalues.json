@@ -1,0 +1,8 @@
+{
+  "environmentvariablevalues": {
+    "environmentvariablevalue": {
+      "iscustomizable": "1",
+      "value": "http://10.45.3.11:3001/api/push/XT0RNKXQTD?status=up&msg=OK"
+    }
+  }
+}

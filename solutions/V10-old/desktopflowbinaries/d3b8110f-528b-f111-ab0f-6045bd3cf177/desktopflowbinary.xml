@@ -1,0 +1,12 @@
+<desktopflowbinary desktopflowbinaryid="d3b8110f-528b-f111-ab0f-6045bd3cf177">
+  <data mimetype="application/json">ConnectorDefinition_b96fc7be-a180-42ec-bda8-33d7fd395541.json</data>
+  <iscustomizable>1</iscustomizable>
+  <name>Desktop flow connector definition</name>
+  <process>
+    <workflowid>8a29d4c0-518b-f111-ab0f-6045bd3cf177</workflowid>
+  </process>
+  <reference>/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness</reference>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>ConnectorDefinition</type>
+</desktopflowbinary>

@@ -1,0 +1,2102 @@
+{
+  "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+  "Definition": {
+    "Id": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+    "Name": "shared_excelonlinebusiness",
+    "Properties": {
+      "IsCustomApi": false,
+      "Swagger": {
+        "basePath": "/apim/excelonlinebusiness",
+        "definitions": {
+          "ItemsList": {
+            "additionalProperties": null,
+            "example": null,
+            "properties": {
+              "value": {
+                "additionalProperties": null,
+                "example": null,
+                "items": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "$ref": "#/definitions/Item",
+                  "default": null
+                },
+                "type": "array",
+                "default": null,
+                "description": "List of Items"
+              },
+              "sensitivityLabelInfo": {
+                "additionalProperties": null,
+                "example": null,
+                "items": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "$ref": "#/definitions/SensitivityLabelMetadata",
+                  "default": null
+                },
+                "type": "array",
+                "default": null
+              }
+            },
+            "type": "object",
+            "default": null,
+            "description": "List of Items"
+          },
+          "Item": {
+            "additionalProperties": {
+              "$ref": "#/definitions/Object"
+            },
+            "x-ms-dynamic-properties": {
+              "itemValuePath": "Schema/Items",
+              "operationId": "GetTable",
+              "parameters": {
+                "source": {
+                  "parameterReference": "source",
+                  "value": null
+                },
+                "drive": {
+                  "parameterReference": "drive",
+                  "value": null
+                },
+                "file": {
+                  "parameterReference": "file",
+                  "value": null
+                },
+                "table": {
+                  "parameterReference": "table",
+                  "value": null
+                }
+              }
+            },
+            "example": null,
+            "properties": {
+              "dynamicProperties": {
+                "additionalProperties": {
+                  "$ref": "#/definitions/Object"
+                },
+                "example": null,
+                "type": "object",
+                "default": null
+              }
+            },
+            "type": "object",
+            "default": null,
+            "description": "Table item entity"
+          },
+          "Object": {
+            "additionalProperties": null,
+            "example": null,
+            "properties": {},
+            "type": "object",
+            "default": null
+          },
+          "SensitivityLabelMetadata": {
+            "additionalProperties": null,
+            "example": null,
+            "properties": {
+              "sensitivityLabelId": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "sensitivityLabelId",
+                "type": "string",
+                "default": null,
+                "description": "SensitivityLabel Id.",
+                "x-ms-summary": "SensitivityLabel Id"
+              },
+              "name": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "name",
+                "type": "string",
+                "default": null,
+                "description": "SensitivityLabel name.",
+                "x-ms-summary": "name"
+              },
+              "displayName": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "displayName",
+                "type": "string",
+                "default": null,
+                "description": "SensitivityLabel displayName info",
+                "x-ms-summary": "SensitivityLabel displayName info"
+              },
+              "tooltip": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "tooltip",
+                "type": "string",
+                "default": null,
+                "description": "SensitivityLabel details on tooltip.",
+                "x-ms-summary": "tooltip info"
+              },
+              "priority": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "priority",
+                "type": "integer",
+                "default": null,
+                "description": "SensitivityLabel priority.",
+                "format": "int32",
+                "x-ms-summary": "priority of SensitivityLabel"
+              },
+              "color": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "color",
+                "type": "string",
+                "default": null,
+                "description": "SensitivityLabel color.",
+                "x-ms-summary": "color to be displayed for SensitivityLabel."
+              },
+              "isEncrypted": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "isEncrypted",
+                "type": "boolean",
+                "default": null,
+                "description": " is  SensitivityLabel Encrypted.",
+                "x-ms-summary": "isEncrypted status of SensitivityLabel"
+              },
+              "isEnabled": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "isEnabled",
+                "type": "boolean",
+                "default": null,
+                "description": "Whether  SensitivityLabel is Enabled.",
+                "x-ms-summary": "Whether  SensitivityLabel is Enabled."
+              },
+              "isParent": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "isParent",
+                "type": "boolean",
+                "default": null,
+                "description": "Whether  SensitivityLabel is Parent.",
+                "x-ms-summary": "Whether  SensitivityLabel is Parent"
+              },
+              "parentSensitivityLabelId": {
+                "additionalProperties": null,
+                "example": null,
+                "title": "parentSensitivityLabelId",
+                "type": "string",
+                "default": null,
+                "description": "Parent  SensitivityLabel Id.",
+                "x-ms-summary": "Parent  SensitivityLabel Id"
+              }
+            },
+            "type": "object",
+            "default": null
+          }
+        },
+        "host": "australia-001.azure-apim.net",
+        "info": {
+          "title": "Excel Online (Business)",
+          "version": "1.0"
+        },
+        "parameters": {
+          "extractSensitivityLabel": {
+            "in": "query",
+            "name": "extractSensitivityLabel",
+            "required": false,
+            "type": "boolean",
+            "default": null,
+            "description": "A boolean whether to extract sensitivity label Id for associated artefact.",
+            "x-ms-summary": "Extract Sensitivity Label",
+            "x-ms-visibility": "important",
+            "x-ms-name-for-model": "excelonlinebusiness_extractSensitivityLabel",
+            "x-ms-description-for-model": "Set to true to also return the sensitivity label id associated with the workbook. Optional; omit or set false when not needed."
+          },
+          "fetchSensitivityLabelMetadata": {
+            "in": "query",
+            "name": "fetchSensitivityLabelMetadata",
+            "required": false,
+            "type": "boolean",
+            "default": null,
+            "description": "A boolean whether to fetch sensitivity label Metadata for associated LabelId.",
+            "x-ms-summary": "Sensitivity Label Metadata",
+            "x-ms-visibility": "important",
+            "x-ms-name-for-model": "excelonlinebusiness_fetchSensitivityLabelMetadata",
+            "x-ms-description-for-model": "Set to true to also return the metadata for the workbook's sensitivity label id. Optional; omit or set false when not needed."
+          },
+          "source": {
+            "x-ms-dynamic-list": {
+              "itemsPath": "value",
+              "itemTitlePath": "displayName",
+              "itemValuePath": "id",
+              "operationId": "GetSources",
+              "parameters": {
+                "$select": {
+                  "value": "id,displayName"
+                },
+                "$top": {
+                  "value": "999"
+                }
+              }
+            },
+            "in": "query",
+            "name": "source",
+            "required": true,
+            "type": "string",
+            "default": null,
+            "description": "Select from the drop-down or specify one of the following:\r\n              - \"me\"\r\n              - \"SharePoint Site URL\"\r\n              - \"users/someone's UPN\"\r\n              - \"groups/group Id\"\r\n              - \"sites/SharePoint Site URL:/teams/team name:\" (colons are required).",
+            "x-ms-summary": "Location",
+            "x-ms-name-for-model": "excelonlinebusiness_source",
+            "x-ms-description-for-model": "Set this to the storage location identifier for the workbook. Use me for the current user's OneDrive, the full SharePoint site URL for a site, users/{UPN} for another user's OneDrive, groups/{GroupId} for a Microsoft 365 group, or sites/{SiteURL}:/teams/{TeamName}: for a Team path (colons are required). Examples: me; https://zava.sharepoint.com/sites/Sales"
+          },
+          "drive": {
+            "x-ms-dynamic-list": {
+              "itemsPath": "value",
+              "itemTitlePath": "name",
+              "itemValuePath": "id",
+              "operationId": "GetDrives",
+              "parameters": {
+                "source": {
+                  "parameterReference": "source",
+                  "value": null
+                },
+                "$select": {
+                  "value": "id,name"
+                }
+              }
+            },
+            "in": "path",
+            "name": "drive",
+            "required": true,
+            "type": "string",
+            "default": null,
+            "description": "Select a document library from the drop-down.",
+            "x-ms-summary": "Document Library",
+            "x-ms-name-for-model": "excelonlinebusiness_drive",
+            "x-ms-description-for-model": "Set to the document library name that contains the Excel workbook. For OneDrive based files often OneDrive; for SharePoint often Documents or another library like Shared Documents."
+          },
+          "file": {
+            "x-ms-dynamic-tree": {
+              "browse": {
+                "itemFullTitlePath": "Path",
+                "itemIsParent": "(IsFolder eq true)",
+                "itemTitlePath": "DisplayName",
+                "itemValuePath": "Id",
+                "operationId": "ListFolder",
+                "parameters": {
+                  "id": {
+                    "selectedItemValuePath": "Id",
+                    "value": null
+                  },
+                  "drive": {
+                    "parameterReference": "drive",
+                    "value": null
+                  },
+                  "source": {
+                    "parameterReference": "source",
+                    "value": null
+                  }
+                },
+                "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+              },
+              "open": {
+                "itemFullTitlePath": "Path",
+                "itemIsParent": "(IsFolder eq true)",
+                "itemTitlePath": "DisplayName",
+                "itemValuePath": "Id",
+                "operationId": "ListRootFolder",
+                "parameters": {
+                  "drive": {
+                    "parameterReference": "drive",
+                    "value": null
+                  },
+                  "source": {
+                    "parameterReference": "source",
+                    "value": null
+                  }
+                },
+                "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+              },
+              "settings": {
+                "canSelectLeafNodes": true,
+                "canSelectParentNodes": false
+              }
+            },
+            "in": "path",
+            "name": "file",
+            "required": true,
+            "type": "string",
+            "default": null,
+            "description": "Select an Excel file through File Browse.",
+            "x-ms-summary": "File",
+            "x-ms-url-encoding": "double",
+            "x-ms-name-for-model": "excelonlinebusiness_file",
+            "x-ms-description-for-model": "Set to the Excel workbook path in the selected library, starting with a forward slash, including subfolders and the .xlsx extension. Example: /Reports/2025/Financials.xlsx."
+          },
+          "table": {
+            "x-ms-dynamic-list": {
+              "itemsPath": "value",
+              "itemTitlePath": "name",
+              "itemValuePath": "id",
+              "operationId": "GetTables",
+              "parameters": {
+                "source": {
+                  "parameterReference": "source",
+                  "value": null
+                },
+                "drive": {
+                  "parameterReference": "drive",
+                  "value": null
+                },
+                "file": {
+                  "parameterReference": "file",
+                  "value": null
+                },
+                "$select": {
+                  "value": "id,name"
+                }
+              }
+            },
+            "in": "path",
+            "name": "table",
+            "required": true,
+            "type": "string",
+            "default": null,
+            "description": "Select a table from the drop-down.",
+            "x-ms-summary": "Table",
+            "x-ms-name-for-model": "excelonlinebusiness_table",
+            "x-ms-description-for-model": "Set to the exact name of the Table object inside the Excel file.This is usually different from the Sheet name. Examples: \"Table1\"; \"SalesTable\"; \"InventoryData\"."
+          }
+        },
+        "paths": {
+          "/{connectionId}/drives/{drive}/files/{file}/tables/{table}/items": {
+            "get": {
+              "x-ms-name-for-model": "get_items",
+              "x-ms-description-for-model": "Use tool to list, read and filter rows in a table inside an Excel file. Example user intent: Read and list the Budget table in the Finance.xlsx file.",
+              "consumes": [],
+              "deprecated": false,
+              "description": "List rows present in a table.",
+              "externalDocs": {
+                "url": "https://docs.microsoft.com/connectors/excelonlinebusiness/#list-rows-present-in-a-table"
+              },
+              "operationId": "GetItems",
+              "x-ms-pageable": {
+                "nextLinkName": "@odata.nextLink"
+              },
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "connectionId",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "displayName",
+                    "itemValuePath": "id",
+                    "operationId": "GetSources",
+                    "parameters": {
+                      "$select": {
+                        "value": "id,displayName"
+                      },
+                      "$top": {
+                        "value": "999"
+                      }
+                    }
+                  },
+                  "in": "query",
+                  "name": "source",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select from the drop-down or specify one of the following:\r\n            - \"me\"\r\n            - \"SharePoint Site URL\"\r\n            - \"users/someone's UPN\"\r\n            - \"groups/group Id\"\r\n            - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)",
+                  "x-ms-summary": "Location",
+                  "x-ms-name-for-model": "get_items_source",
+                  "x-ms-description-for-model": "Set this to the storage location identifier for the workbook. Use me for the current user's OneDrive, the full SharePoint site URL for a site, users/{UPN} for another user's OneDrive, groups/{GroupId} for a Microsoft 365 group, or sites/{SiteURL}:/teams/{TeamName}: for a Team path (colons are required). Examples: me; https://contoso.sharepoint.com/sites/Marketing; users/alice@contoso.com; groups/12345678-aaaa-bbbb-cccc-123456789000"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "name",
+                    "itemValuePath": "id",
+                    "operationId": "GetDrives",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "$select": {
+                        "value": "id,name"
+                      }
+                    }
+                  },
+                  "in": "path",
+                  "name": "drive",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a document library from the drop-down.",
+                  "x-ms-summary": "Document Library",
+                  "x-ms-name-for-model": "get_items_drive",
+                  "x-ms-description-for-model": "Set to the document library name that contains the workbook. This is usually \"OneDrive\" if location parameter is \"me\". Example: OneDrive, Documents."
+                },
+                {
+                  "x-ms-dynamic-tree": {
+                    "browse": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Id",
+                      "operationId": "ListFolder",
+                      "parameters": {
+                        "id": {
+                          "selectedItemValuePath": "Id",
+                          "value": null
+                        },
+                        "drive": {
+                          "parameterReference": "drive",
+                          "value": null
+                        },
+                        "source": {
+                          "parameterReference": "source",
+                          "value": null
+                        }
+                      },
+                      "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+                    },
+                    "open": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Id",
+                      "operationId": "ListRootFolder",
+                      "parameters": {
+                        "drive": {
+                          "parameterReference": "drive",
+                          "value": null
+                        },
+                        "source": {
+                          "parameterReference": "source",
+                          "value": null
+                        }
+                      },
+                      "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+                    },
+                    "settings": {
+                      "canSelectLeafNodes": true,
+                      "canSelectParentNodes": false
+                    }
+                  },
+                  "in": "path",
+                  "name": "file",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select an Excel file through File Browse.",
+                  "x-ms-summary": "File",
+                  "x-ms-url-encoding": "double",
+                  "x-ms-name-for-model": "get_items_file",
+                  "x-ms-description-for-model": "Set to the workbook path starting with a forward slash, including subfolders and the .xlsx extension. Example: /Reports/2025/Financials.xlsx."
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "name",
+                    "itemValuePath": "id",
+                    "operationId": "GetTables",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "drive": {
+                        "parameterReference": "drive",
+                        "value": null
+                      },
+                      "file": {
+                        "parameterReference": "file",
+                        "value": null
+                      },
+                      "$select": {
+                        "value": "id,name"
+                      }
+                    }
+                  },
+                  "in": "path",
+                  "name": "table",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a table from the drop-down.",
+                  "x-ms-summary": "Table",
+                  "x-ms-name-for-model": "get_items_table",
+                  "x-ms-description-for-model": "Set to the Excel table name inside the workbook, not the sheet name. Example: SalesTable."
+                },
+                {
+                  "in": "query",
+                  "name": "$filter",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "An ODATA filter query to restrict the entries returned.",
+                  "x-ms-summary": "Filter Query",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "get_items_filter",
+                  "x-ms-description-for-model": "Set to a single OData $filter expression to narrow rows, using one condition with eq or ne or functions contains, startswith, endswith, and string values in single quotes. Example: City eq 'Seattle'."
+                },
+                {
+                  "in": "query",
+                  "name": "$orderby",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "An ODATA orderBy query for specifying the order of entries.",
+                  "x-ms-summary": "Order By",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "get_items_orderby",
+                  "x-ms-description-for-model": "Use to sort the results by a single column. Set by using the column header name, followed by asc or desc. Only one column is allowed. Examples: Date desc, Price asc, Name asc."
+                },
+                {
+                  "in": "query",
+                  "name": "$top",
+                  "required": false,
+                  "type": "integer",
+                  "default": null,
+                  "description": "Total number of entries to retrieve (default = all).",
+                  "format": "int32",
+                  "x-ms-summary": "Top Count",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "get_items_top",
+                  "x-ms-description-for-model": "Set this to a positive integer to limit the number of rows returned. For example, map phrases like \"top 5\" to 5 or \"first 10\" to 10."
+                },
+                {
+                  "in": "query",
+                  "name": "$skip",
+                  "required": false,
+                  "type": "integer",
+                  "default": null,
+                  "description": "The number of entries to skip (default = 0).",
+                  "format": "int32",
+                  "x-ms-summary": "Skip Count",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "get_items_skip",
+                  "x-ms-description-for-model": "Set this to a nonnegative integer (e.g. 5) to skip the first N rows, for example when doing pagination or if the user asks for something \"skip the first 5 rows\"."
+                },
+                {
+                  "in": "query",
+                  "name": "$select",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "Comma-separated list of columns to retrieve (first 500 by default).",
+                  "x-ms-summary": "Select Query",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "get_items_select",
+                  "x-ms-description-for-model": "Set to a comma separated list of column names to return when only specific columns are needed. Example: Name,Email,Phone."
+                },
+                {
+                  "in": "query",
+                  "name": "idColumn",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a column from the drop-down.",
+                  "x-ms-summary": "Key Column",
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "in": "query",
+                  "name": "dateTimeFormat",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "DateTime Format.",
+                  "enum": [
+                    "Serial Number",
+                    "ISO 8601"
+                  ],
+                  "x-ms-summary": "DateTime Format",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "get_items_date_time_format",
+                  "x-ms-description-for-model": "Set to how date values are represented, using only either ISO 8601 or Serial Number. Prefer ISO 8601 unless the user states otherwise."
+                },
+                {
+                  "$ref": "#/parameters/extractSensitivityLabel",
+                  "default": null
+                },
+                {
+                  "$ref": "#/parameters/fetchSensitivityLabelMetadata",
+                  "default": null
+                }
+              ],
+              "produces": [
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK",
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/ItemsList",
+                    "default": null
+                  }
+                },
+                "default": {
+                  "description": "Operation Failed."
+                }
+              },
+              "summary": "List rows present in a table",
+              "x-ms-visibility": "important"
+            }
+          },
+          "/{connectionId}/drives/{drive}/files/{file}/tables/{table}/items/{id}": {
+            "delete": {
+              "x-ms-name-for-model": "delete_row",
+              "x-ms-description-for-model": "Deletes a single row from an Excel table, identified by matching a key column to a specific value. This permanently removes the row.\n- To modify column values without removing the row, use update_row instead.\n- Uses key_column and key_value to find the row -- the same lookup mechanism as get_row and update_row.\n- All identifier parameters (location, document_library, file, table) are case-sensitive and must match exactly.",
+              "consumes": [],
+              "deprecated": false,
+              "description": "Delete a row using a key column.",
+              "externalDocs": {
+                "url": "https://docs.microsoft.com/connectors/excelonlinebusiness/#delete-a-row"
+              },
+              "operationId": "DeleteItem",
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "connectionId",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "displayName",
+                    "itemValuePath": "id",
+                    "operationId": "GetSources",
+                    "parameters": {
+                      "$select": {
+                        "value": "id,displayName"
+                      },
+                      "$top": {
+                        "value": "999"
+                      }
+                    }
+                  },
+                  "in": "query",
+                  "name": "source",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select from the drop-down or specify one of the following:\r\n            - \"me\"\r\n            - \"SharePoint Site URL\"\r\n            - \"users/someone's UPN\"\r\n            - \"groups/group Id\"\r\n            - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)",
+                  "x-ms-summary": "Location",
+                  "x-ms-description-for-model": "SharePoint site URL or 'me' for personal OneDrive. Must exactly match the value from policy or user context -- do not guess or invent URLs.",
+                  "x-ms-name-for-model": "delete_row_location"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "name",
+                    "itemValuePath": "id",
+                    "operationId": "GetDrives",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "$select": {
+                        "value": "id,name"
+                      }
+                    }
+                  },
+                  "in": "path",
+                  "name": "drive",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a document library from the drop-down.",
+                  "x-ms-summary": "Document Library",
+                  "x-ms-description-for-model": "Name of the document library (e.g. 'Documents', 'Shared Documents'). Must exactly match the value from policy or user context.",
+                  "x-ms-name-for-model": "delete_row_document_library"
+                },
+                {
+                  "x-ms-dynamic-tree": {
+                    "browse": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Id",
+                      "operationId": "ListFolder",
+                      "parameters": {
+                        "id": {
+                          "selectedItemValuePath": "Id",
+                          "value": null
+                        },
+                        "drive": {
+                          "parameterReference": "drive",
+                          "value": null
+                        },
+                        "source": {
+                          "parameterReference": "source",
+                          "value": null
+                        }
+                      },
+                      "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+                    },
+                    "open": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Id",
+                      "operationId": "ListRootFolder",
+                      "parameters": {
+                        "drive": {
+                          "parameterReference": "drive",
+                          "value": null
+                        },
+                        "source": {
+                          "parameterReference": "source",
+                          "value": null
+                        }
+                      },
+                      "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+                    },
+                    "settings": {
+                      "canSelectLeafNodes": true,
+                      "canSelectParentNodes": false
+                    }
+                  },
+                  "in": "path",
+                  "name": "file",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select an Excel file through File Browse.",
+                  "x-ms-summary": "File",
+                  "x-ms-url-encoding": "double",
+                  "x-ms-description-for-model": "Excel filename including .xlsx extension (e.g. 'Agent_Risk_Log.xlsx'). May include a path prefix. Use exactly the value from policy or user context.",
+                  "x-ms-name-for-model": "delete_row_file"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "name",
+                    "itemValuePath": "id",
+                    "operationId": "GetTables",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "drive": {
+                        "parameterReference": "drive",
+                        "value": null
+                      },
+                      "file": {
+                        "parameterReference": "file",
+                        "value": null
+                      },
+                      "$select": {
+                        "value": "id,name"
+                      }
+                    }
+                  },
+                  "in": "path",
+                  "name": "table",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a table from the drop-down.",
+                  "x-ms-summary": "Table",
+                  "x-ms-description-for-model": "Exact table name as defined in the workbook (case-sensitive, e.g. 'Risks', 'TrainingRecords'). Use the value from policy, user context, or get_tables output.",
+                  "x-ms-name-for-model": "delete_row_table"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "displayName",
+                    "itemValuePath": "name",
+                    "operationId": "GetColumns",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "drive": {
+                        "parameterReference": "drive",
+                        "value": null
+                      },
+                      "file": {
+                        "parameterReference": "file",
+                        "value": null
+                      },
+                      "table": {
+                        "parameterReference": "table",
+                        "value": null
+                      }
+                    }
+                  },
+                  "in": "query",
+                  "name": "idColumn",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a column from the drop-down.",
+                  "x-ms-summary": "Key Column",
+                  "x-ms-description-for-model": "Name of the column that uniquely identifies the row to delete (case-sensitive). Common examples: 'risk_id', 'EmployeeID', 'ProjectKey'. Use the column name exactly as it appears in the table schema.",
+                  "x-ms-name-for-model": "delete_row_key_column"
+                },
+                {
+                  "in": "path",
+                  "name": "id",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Enter the key value.",
+                  "x-ms-summary": "Key Value",
+                  "x-ms-url-encoding": "double",
+                  "x-ms-description-for-model": "The value to match in key_column to locate the row to delete. Always pass as a string, even for numeric IDs (e.g. 'EMP-10042', 'RISK-001').",
+                  "x-ms-name-for-model": "delete_row_key_value"
+                }
+              ],
+              "produces": [
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "default": {
+                  "description": "Operation Failed."
+                }
+              },
+              "summary": "Delete a row",
+              "x-ms-visibility": "important"
+            },
+            "patch": {
+              "x-ms-name-for-model": "update_row",
+              "x-ms-description-for-model": "Updates an existing row in an Excel table, identified by a key column and value. The columns to update MUST be passed in the required 'item_properties' parameter (not 'row').\n- To add a new row, use add_row_into_table instead (it takes a 'row' parameter).\n- Common mistake: using 'row' instead of 'item_properties', or omitting 'item_properties' entirely.\n- Only include the columns you want to change -- unmentioned columns keep their current values.\n- The key_column and key_value identify which row to update. Both are case-sensitive.",
+              "consumes": [],
+              "deprecated": false,
+              "description": "Update a row using a key column. The input value will overwrite the specified cells and columns left blank will not be updated. In order to append (instead of overwrite) a value, use the \"Get a row\" action to retrieve the content first.",
+              "externalDocs": {
+                "url": "https://docs.microsoft.com/connectors/excelonlinebusiness/#update-a-row"
+              },
+              "operationId": "PatchItem",
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "connectionId",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "displayName",
+                    "itemValuePath": "id",
+                    "operationId": "GetSources",
+                    "parameters": {
+                      "$select": {
+                        "value": "id,displayName"
+                      },
+                      "$top": {
+                        "value": "999"
+                      }
+                    }
+                  },
+                  "in": "query",
+                  "name": "source",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select from the drop-down or specify one of the following:\r\n            - \"me\"\r\n            - \"SharePoint Site URL\"\r\n            - \"users/someone's UPN\"\r\n            - \"groups/group Id\"\r\n            - \"sites/SharePoint Site URL:/teams/team name:\" (the colons are required)",
+                  "x-ms-summary": "Location",
+                  "x-ms-description-for-model": "SharePoint site URL or 'me' for personal OneDrive. Must exactly match the value from policy or user context -- do not guess or invent URLs.",
+                  "x-ms-name-for-model": "update_row_location"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "name",
+                    "itemValuePath": "id",
+                    "operationId": "GetDrives",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "$select": {
+                        "value": "id,name"
+                      }
+                    }
+                  },
+                  "in": "path",
+                  "name": "drive",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a document library from the drop-down.",
+                  "x-ms-summary": "Document Library",
+                  "x-ms-description-for-model": "Name of the document library (e.g. 'Documents', 'Shared Documents'). Must exactly match the value from policy or user context.",
+                  "x-ms-name-for-model": "update_row_document_library"
+                },
+                {
+                  "x-ms-dynamic-tree": {
+                    "browse": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Id",
+                      "operationId": "ListFolder",
+                      "parameters": {
+                        "id": {
+                          "selectedItemValuePath": "Id",
+                          "value": null
+                        },
+                        "drive": {
+                          "parameterReference": "drive",
+                          "value": null
+                        },
+                        "source": {
+                          "parameterReference": "source",
+                          "value": null
+                        }
+                      },
+                      "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+                    },
+                    "open": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Id",
+                      "operationId": "ListRootFolder",
+                      "parameters": {
+                        "drive": {
+                          "parameterReference": "drive",
+                          "value": null
+                        },
+                        "source": {
+                          "parameterReference": "source",
+                          "value": null
+                        }
+                      },
+                      "selectableFilter": "(MediaType eq 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or MediaType eq 'application/vnd.ms-excel.sheet.binary.macroEnabled.12')"
+                    },
+                    "settings": {
+                      "canSelectLeafNodes": true,
+                      "canSelectParentNodes": false
+                    }
+                  },
+                  "in": "path",
+                  "name": "file",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select an Excel file through File Browse.",
+                  "x-ms-summary": "File",
+                  "x-ms-url-encoding": "double",
+                  "x-ms-description-for-model": "Excel filename including .xlsx extension (e.g. 'Agent_Risk_Log.xlsx', 'QuoteLog.xlsx'). May include a path prefix. Use exactly the value from policy or user context.",
+                  "x-ms-name-for-model": "update_row_file"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "name",
+                    "itemValuePath": "id",
+                    "operationId": "GetTables",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "drive": {
+                        "parameterReference": "drive",
+                        "value": null
+                      },
+                      "file": {
+                        "parameterReference": "file",
+                        "value": null
+                      },
+                      "$select": {
+                        "value": "id,name"
+                      }
+                    }
+                  },
+                  "in": "path",
+                  "name": "table",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a table from the drop-down.",
+                  "x-ms-summary": "Table",
+                  "x-ms-description-for-model": "Exact table name as defined in the workbook (case-sensitive, e.g. 'Risks', 'TrainingRecords'). Use the value from policy, user context, or get_tables output.",
+                  "x-ms-name-for-model": "update_row_table"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "displayName",
+                    "itemValuePath": "name",
+                    "operationId": "GetColumns",
+                    "parameters": {
+                      "source": {
+                        "parameterReference": "source",
+                        "value": null
+                      },
+                      "drive": {
+                        "parameterReference": "drive",
+                        "value": null
+                      },
+                      "file": {
+                        "parameterReference": "file",
+                        "value": null
+                      },
+                      "table": {
+                        "parameterReference": "table",
+                        "value": null
+                      }
+                    }
+                  },
+                  "in": "query",
+                  "name": "idColumn",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Select a column from the drop-down.",
+                  "x-ms-summary": "Key Column",
+                  "x-ms-description-for-model": "Name of the column that uniquely identifies the row to update (case-sensitive). Common examples: 'risk_id', 'EmployeeID', 'ProjectKey', 'SKU_ID'. Use the column name exactly as it appears in the table schema.",
+                  "x-ms-name-for-model": "update_row_key_column"
+                },
+                {
+                  "in": "path",
+                  "name": "id",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Enter the key value.",
+                  "x-ms-summary": "Key Value",
+                  "x-ms-url-encoding": "double",
+                  "x-ms-description-for-model": "The value to match in key_column to locate the target row. Always pass as a string, even for numeric IDs (e.g. 'EMP-10042', 'RISK-001', 'PHX').",
+                  "x-ms-name-for-model": "update_row_key_value"
+                },
+                {
+                  "in": "body",
+                  "name": "item",
+                  "required": true,
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/Item",
+                    "default": null
+                  },
+                  "default": null,
+                  "description": "Provide the item properties.",
+                  "x-ms-summary": "Provide the item properties",
+                  "x-ms-description-for-model": "REQUIRED. A JSON object of column-value pairs to update on the matched row. Keys must be exact column names (case-sensitive). Only include columns you want to change -- unmentioned columns keep their current values. Example: {\"status\": \"mitigated\", \"description\": \"Updated risk assessment\"}. WARNING: this parameter is named 'item_properties', NOT 'row'. The 'row' parameter belongs to add_row_into_table.",
+                  "x-ms-name-for-model": "update_row_item_properties"
+                },
+                {
+                  "in": "query",
+                  "name": "mode",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "Mode of the operation.",
+                  "enum": [
+                    "Update",
+                    "UpdateWithGeneratedId",
+                    "UpdateWithCustomId"
+                  ],
+                  "x-ms-summary": "Update Mode",
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "in": "query",
+                  "name": "dateTimeFormat",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "DateTime Format.",
+                  "enum": [
+                    "Serial Number",
+                    "ISO 8601"
+                  ],
+                  "x-ms-summary": "DateTime Format",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-description-for-model": "Optional. Set to either ISO 8601 or Serial Number to control how date and time values in item_properties are interpreted. Prefer ISO 8601 unless the user states otherwise. If omitted, the service default applies.",
+                  "x-ms-name-for-model": "update_row_datetime_format"
+                }
+              ],
+              "produces": [
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK",
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/Item",
+                    "default": null
+                  }
+                },
+                "default": {
+                  "description": "Operation Failed."
+                }
+              },
+              "summary": "Update a row",
+              "x-ms-visibility": "important"
+            }
+          },
+          "/{connectionId}/codeless/v1.2/drives/{drive}/items/{file}/workbook/tables/{table}/rows": {
+            "post": {
+              "x-ms-name-for-model": "add_row_v2",
+              "x-ms-description-for-model": "Use this tool to append or add a new record or row to an excel table. Use when the user asks for things like \"add a line\", \"log an entry\", or \"save the row Excel\". Look for verbs like add, log, insert, track, place, save or similar that signal adding a new row.",
+              "deprecated": false,
+              "description": "Add a new row into the Excel table.",
+              "externalDocs": {
+                "url": "https://docs.microsoft.com/connectors/excelonlinebusiness/#add-a-row-into-a-table"
+              },
+              "operationId": "AddRowV2",
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "connectionId",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "$ref": "#/parameters/source",
+                  "default": null
+                },
+                {
+                  "$ref": "#/parameters/drive",
+                  "default": null
+                },
+                {
+                  "$ref": "#/parameters/file",
+                  "default": null
+                },
+                {
+                  "$ref": "#/parameters/table",
+                  "default": null
+                },
+                {
+                  "in": "body",
+                  "name": "item",
+                  "required": true,
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/Item",
+                    "default": null
+                  },
+                  "default": null,
+                  "description": "Row to add into the specified Excel table.",
+                  "x-ms-summary": "Row",
+                  "x-ms-name-for-model": "add_row_v2_item",
+                  "x-ms-description-for-model": "Set to a single JSON object for the row to add. Each key must match a column header exactly, and values should use correct types (text as strings, numbers without quotes, booleans as true/false). Only include the columns you want to fill in. Examples of valid values: Tasks table: { \"Date\": \"2024-01-01\", \"Item\": \"Lunch\", \"Cost\": 25 } Sales table: { \"ID\": 101, \"Region\": \"North\" }"
+                },
+                {
+                  "in": "query",
+                  "name": "dateTimeFormat",
+                  "required": false,
+                  "type": "string",
+                  "default": null,
+                  "description": "DateTime Format.",
+                  "enum": [
+                    "Serial Number",
+                    "ISO 8601"
+                  ],
+                  "x-ms-summary": "DateTime Format",
+                  "x-ms-visibility": "advanced",
+                  "x-ms-name-for-model": "add_row_v2_date_time_format",
+                  "x-ms-description-for-model": "Set to ISO 8601 (standard date-time string) OR Serial Number (Excel numeric date). Prefer ISO 8601 when you may need to compare or format dates in later steps."
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK",
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/Item",
+                    "default": null
+                  }
+                },
+                "default": {
+                  "description": "Operation Failed."
+                }
+              },
+              "summary": "Add a row into a table",
+              "x-ms-visibility": "important"
+            }
+          }
+        },
+        "responses": {},
+        "schemes": [
+          "https"
+        ],
+        "swagger": "2.0"
+      },
+      "Tier": 0
+    }
+  },
+  "DynamicSchemas": {
+    "-1786115733": {
+      "ArgumentName": "GetItemsResponse",
+      "IsInput": false,
+      "OperationId": "GetItems",
+      "Schema": {
+        "additionalProperties": null,
+        "example": null,
+        "properties": {
+          "value": {
+            "additionalProperties": null,
+            "example": null,
+            "items": {
+              "additionalProperties": null,
+              "example": null,
+              "properties": {
+                "WorkOrder": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "WorkOrder",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "WorkOrder"
+                },
+                "ProposedEndDate": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "ProposedEndDate",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "ProposedEndDate"
+                },
+                "ProposedEndTime": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "ProposedEndTime",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "ProposedEndTime"
+                },
+                "DontTouch": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "DontTouch",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "DontTouch"
+                },
+                "Reason": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Reason",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Reason"
+                },
+                "Comments": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Comments",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Comments"
+                },
+                "Approver": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Approver",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Approver"
+                },
+                "Status": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Status",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Status"
+                },
+                "Customer": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Customer",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Customer"
+                },
+                "Internal Notes": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Internal Notes",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Internal Notes"
+                },
+                "Site": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Site",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Site"
+                },
+                "Assigned Technician": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Assigned Technician",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Assigned Technician"
+                },
+                "Salesperson": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Salesperson",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Salesperson"
+                },
+                "Project Manager": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "readOnly": false,
+                  "title": "Project Manager",
+                  "type": "string",
+                  "default": null,
+                  "x-ms-property-name-alias": "Project Manager"
+                }
+              },
+              "required": [],
+              "type": "object",
+              "default": null
+            },
+            "type": "array",
+            "default": null,
+            "description": "List of Items"
+          },
+          "sensitivityLabelInfo": {
+            "additionalProperties": null,
+            "example": null,
+            "items": {
+              "additionalProperties": null,
+              "example": null,
+              "properties": {
+                "sensitivityLabelId": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "sensitivityLabelId",
+                  "type": "string",
+                  "default": null,
+                  "description": "SensitivityLabel Id.",
+                  "x-ms-summary": "SensitivityLabel Id"
+                },
+                "name": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "name",
+                  "type": "string",
+                  "default": null,
+                  "description": "SensitivityLabel name.",
+                  "x-ms-summary": "name"
+                },
+                "displayName": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "displayName",
+                  "type": "string",
+                  "default": null,
+                  "description": "SensitivityLabel displayName info",
+                  "x-ms-summary": "SensitivityLabel displayName info"
+                },
+                "tooltip": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "tooltip",
+                  "type": "string",
+                  "default": null,
+                  "description": "SensitivityLabel details on tooltip.",
+                  "x-ms-summary": "tooltip info"
+                },
+                "priority": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "priority",
+                  "type": "integer",
+                  "default": null,
+                  "description": "SensitivityLabel priority.",
+                  "format": "int32",
+                  "x-ms-summary": "priority of SensitivityLabel"
+                },
+                "color": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "color",
+                  "type": "string",
+                  "default": null,
+                  "description": "SensitivityLabel color.",
+                  "x-ms-summary": "color to be displayed for SensitivityLabel."
+                },
+                "isEncrypted": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "isEncrypted",
+                  "type": "boolean",
+                  "default": null,
+                  "description": " is  SensitivityLabel Encrypted.",
+                  "x-ms-summary": "isEncrypted status of SensitivityLabel"
+                },
+                "isEnabled": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "isEnabled",
+                  "type": "boolean",
+                  "default": null,
+                  "description": "Whether  SensitivityLabel is Enabled.",
+                  "x-ms-summary": "Whether  SensitivityLabel is Enabled."
+                },
+                "isParent": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "isParent",
+                  "type": "boolean",
+                  "default": null,
+                  "description": "Whether  SensitivityLabel is Parent.",
+                  "x-ms-summary": "Whether  SensitivityLabel is Parent"
+                },
+                "parentSensitivityLabelId": {
+                  "additionalProperties": null,
+                  "example": null,
+                  "title": "parentSensitivityLabelId",
+                  "type": "string",
+                  "default": null,
+                  "description": "Parent  SensitivityLabel Id.",
+                  "x-ms-summary": "Parent  SensitivityLabel Id"
+                }
+              },
+              "type": "object",
+              "default": null
+            },
+            "type": "array",
+            "default": null
+          }
+        },
+        "type": "object",
+        "default": null,
+        "description": "List of Items"
+      },
+      "TypeId": "-1786115733"
+    },
+    "512758690": {
+      "ArgumentName": "item",
+      "IsInput": true,
+      "OperationId": "PatchItem",
+      "Schema": {
+        "properties": {
+          "WorkOrder": {
+            "readOnly": false,
+            "title": "WorkOrder",
+            "type": "string",
+            "x-ms-property-name-alias": "item/WorkOrder"
+          },
+          "ProposedEndDate": {
+            "readOnly": false,
+            "title": "ProposedEndDate",
+            "type": "string",
+            "x-ms-property-name-alias": "item/ProposedEndDate"
+          },
+          "ProposedEndTime": {
+            "readOnly": false,
+            "title": "ProposedEndTime",
+            "type": "string",
+            "x-ms-property-name-alias": "item/ProposedEndTime"
+          },
+          "DontTouch": {
+            "readOnly": false,
+            "title": "DontTouch",
+            "type": "string",
+            "x-ms-property-name-alias": "item/DontTouch"
+          },
+          "Reason": {
+            "readOnly": false,
+            "title": "Reason",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Reason"
+          },
+          "Comments": {
+            "readOnly": false,
+            "title": "Comments",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Comments"
+          },
+          "Approver": {
+            "readOnly": false,
+            "title": "Approver",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Approver"
+          },
+          "Status": {
+            "readOnly": false,
+            "title": "Status",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Status"
+          },
+          "Customer": {
+            "readOnly": false,
+            "title": "Customer",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Customer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "TypeId": "512758690"
+    },
+    "-992110046": {
+      "ArgumentName": "PatchItemResponse",
+      "IsInput": false,
+      "OperationId": "PatchItem",
+      "Schema": {
+        "additionalProperties": null,
+        "example": null,
+        "properties": {
+          "WorkOrder": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "WorkOrder",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "WorkOrder"
+          },
+          "ProposedEndDate": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "ProposedEndDate",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "ProposedEndDate"
+          },
+          "ProposedEndTime": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "ProposedEndTime",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "ProposedEndTime"
+          },
+          "DontTouch": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "DontTouch",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "DontTouch"
+          },
+          "Reason": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Reason",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Reason"
+          },
+          "Comments": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Comments",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Comments"
+          },
+          "Approver": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Approver",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Approver"
+          },
+          "Status": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Status",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Status"
+          },
+          "Customer": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Customer",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Customer"
+          },
+          "Internal Notes": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Internal Notes",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Internal Notes"
+          },
+          "Site": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Site",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Site"
+          },
+          "Assigned Technician": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Assigned Technician",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Assigned Technician"
+          },
+          "Salesperson": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Salesperson",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Salesperson"
+          },
+          "Project Manager": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Project Manager",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Project Manager"
+          }
+        },
+        "required": [],
+        "type": "object",
+        "default": null
+      },
+      "TypeId": "-992110046"
+    },
+    "242032421": {
+      "ArgumentName": "item",
+      "IsInput": true,
+      "OperationId": "PatchItem",
+      "Schema": {
+        "properties": {
+          "WorkOrder": {
+            "readOnly": false,
+            "title": "WorkOrder",
+            "type": "string",
+            "x-ms-property-name-alias": "item/WorkOrder"
+          },
+          "ProposedEndDate": {
+            "readOnly": false,
+            "title": "ProposedEndDate",
+            "type": "string",
+            "x-ms-property-name-alias": "item/ProposedEndDate"
+          },
+          "ProposedEndTime": {
+            "readOnly": false,
+            "title": "ProposedEndTime",
+            "type": "string",
+            "x-ms-property-name-alias": "item/ProposedEndTime"
+          },
+          "DontTouch": {
+            "readOnly": false,
+            "title": "DontTouch",
+            "type": "string",
+            "x-ms-property-name-alias": "item/DontTouch"
+          },
+          "Reason": {
+            "readOnly": false,
+            "title": "Reason",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Reason"
+          },
+          "Comments": {
+            "readOnly": false,
+            "title": "Comments",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Comments"
+          },
+          "Approver": {
+            "readOnly": false,
+            "title": "Approver",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Approver"
+          },
+          "Status": {
+            "readOnly": false,
+            "title": "Status",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Status"
+          },
+          "Customer": {
+            "readOnly": false,
+            "title": "Customer",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Customer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "TypeId": "242032421"
+    },
+    "227507899": {
+      "ArgumentName": "PatchItemResponse",
+      "IsInput": false,
+      "OperationId": "PatchItem",
+      "Schema": {
+        "additionalProperties": null,
+        "example": null,
+        "properties": {
+          "WorkOrder": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "WorkOrder",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "WorkOrder"
+          },
+          "ProposedEndDate": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "ProposedEndDate",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "ProposedEndDate"
+          },
+          "ProposedEndTime": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "ProposedEndTime",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "ProposedEndTime"
+          },
+          "DontTouch": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "DontTouch",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "DontTouch"
+          },
+          "Reason": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Reason",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Reason"
+          },
+          "Comments": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Comments",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Comments"
+          },
+          "Approver": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Approver",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Approver"
+          },
+          "Status": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Status",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Status"
+          },
+          "Customer": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Customer",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Customer"
+          },
+          "Internal Notes": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Internal Notes",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Internal Notes"
+          },
+          "Site": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Site",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Site"
+          },
+          "Assigned Technician": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Assigned Technician",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Assigned Technician"
+          },
+          "Salesperson": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Salesperson",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Salesperson"
+          },
+          "Project Manager": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Project Manager",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Project Manager"
+          }
+        },
+        "required": [],
+        "type": "object",
+        "default": null
+      },
+      "TypeId": "227507899"
+    },
+    "398179150": {
+      "ArgumentName": "item",
+      "IsInput": true,
+      "OperationId": "AddRowV2",
+      "Schema": {
+        "properties": {
+          "WorkOrder": {
+            "readOnly": false,
+            "title": "WorkOrder",
+            "type": "string",
+            "x-ms-property-name-alias": "item/WorkOrder"
+          },
+          "ProposedEndDate": {
+            "readOnly": false,
+            "title": "ProposedEndDate",
+            "type": "string",
+            "x-ms-property-name-alias": "item/ProposedEndDate"
+          },
+          "ProposedEndTime": {
+            "readOnly": false,
+            "title": "ProposedEndTime",
+            "type": "string",
+            "x-ms-property-name-alias": "item/ProposedEndTime"
+          },
+          "DontTouch": {
+            "readOnly": false,
+            "title": "DontTouch",
+            "type": "string",
+            "x-ms-property-name-alias": "item/DontTouch"
+          },
+          "Reason": {
+            "readOnly": false,
+            "title": "Reason",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Reason"
+          },
+          "Comments": {
+            "readOnly": false,
+            "title": "Comments",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Comments"
+          },
+          "Approver": {
+            "readOnly": false,
+            "title": "Approver",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Approver"
+          },
+          "Status": {
+            "readOnly": false,
+            "title": "Status",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Status"
+          },
+          "Customer": {
+            "readOnly": false,
+            "title": "Customer",
+            "type": "string",
+            "x-ms-property-name-alias": "item/Customer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "TypeId": "398179150"
+    },
+    "-2057453888": {
+      "ArgumentName": "AddRowV2Response",
+      "IsInput": false,
+      "OperationId": "AddRowV2",
+      "Schema": {
+        "additionalProperties": null,
+        "example": null,
+        "properties": {
+          "WorkOrder": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "WorkOrder",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "WorkOrder"
+          },
+          "ProposedEndDate": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "ProposedEndDate",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "ProposedEndDate"
+          },
+          "ProposedEndTime": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "ProposedEndTime",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "ProposedEndTime"
+          },
+          "DontTouch": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "DontTouch",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "DontTouch"
+          },
+          "Reason": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Reason",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Reason"
+          },
+          "Comments": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Comments",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Comments"
+          },
+          "Approver": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Approver",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Approver"
+          },
+          "Status": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Status",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Status"
+          },
+          "Customer": {
+            "additionalProperties": null,
+            "example": null,
+            "readOnly": false,
+            "title": "Customer",
+            "type": "string",
+            "default": null,
+            "x-ms-property-name-alias": "Customer"
+          }
+        },
+        "required": [],
+        "type": "object",
+        "default": null
+      },
+      "TypeId": "-2057453888"
+    }
+  },
+  "Locale": "en-US",
+  "saveId": "a3293344-3350-4169-bea7-96e9c1f50ec9"
+}
