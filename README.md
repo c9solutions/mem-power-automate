@@ -37,14 +37,4 @@ Where, `--packagetype` can be Managed, Unmanaged or Both
 
 ## Worfklow
 
-Export Solution
-↓
-Overwrite SolutionName.zip
-↓
-pac solution unpack
-↓
-git add .
-↓
-git commit
-↓
-git push
+Export Solution -> Overwrite SolutionName.zip -> pac solution unpack -> git add . -> git commit -> git push
