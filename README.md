@@ -1,5 +1,5 @@
 ## MEM Power automate Repo
-This repo is intended as the source history for changes/updates to the PAD flows. Editing the flow itself needs to be done on the PAD app and must be in a solution so that it can be exported via the `pac` cli command and then push to git.
+This repo is intended as the **source history for changes/updates** to the PAD flows. Editing the flow itself needs to be done on the PAD app and must be in a solution so that it can be exported via the `pac` cli command and then push to git.
 
 # Solutions
 Solutions are saved in the /solutions directory.
